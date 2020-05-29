@@ -7,11 +7,6 @@ public class Network {
 
     List<Node> nodes = new ArrayList<Node>();
 
-    public void loadCustomNetwork(){
-        // Load custom network.
-        // TODO: add file reading for custom protocol.
-    }
-
     public void setupDefaultNetwork(){  
 
         // Create nodes.
@@ -110,6 +105,10 @@ public class Network {
                         }
                     }
 
+                    Route route = new Route();
+
+                    route.setCost(currentNode.getCost());
+
                     // Record shortest path.
                     while(true){
 
@@ -120,22 +119,19 @@ public class Network {
                         currentNode = currentNode.previousNode;
 
                         // Add node to route
+                        route.addNode(currentNode);
 
-                        System.out.println(currentNode.getId());
                     }
                     
-                    return new Route();
+                    return route;
 
                 } else {
-                    System.out.println("Endnode does not exist");
                     return null;
                 }
             } else {
-                System.out.println("BeginNode does not exist");
                 return null;
             }
         } else {
-            System.out.println("Not a valid path");
             return null;
         }
     }

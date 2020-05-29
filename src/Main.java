@@ -6,6 +6,9 @@ public class Main {
 
         network.setupDefaultNetwork();
 
-        network.travelNetwork(1, 5);
+        Route route = network.travelNetwork(1, 5);
+
+        System.out.println(String.format("De route is %f lang", route.getCost()));
+
     }
 }

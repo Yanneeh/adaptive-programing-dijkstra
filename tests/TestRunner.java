@@ -10,7 +10,10 @@ public class TestRunner {
         test.testUpdateNewPreviousNode();
 
         TestNetwork testNetwork = new TestNetwork();
-
         testNetwork.setupTest();
+        testNetwork.testEndPointEqualsBeginPoint();
+        testNetwork.testUnreachableEndPoint();
+        testNetwork.testUnreachableStartPoint();
+        testNetwork.testRoute();
     }
 }
