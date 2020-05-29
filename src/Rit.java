@@ -1,7 +1,15 @@
 package src;
 
 public class Rit extends Node {
-    public Rit(int id){
+
+    String unit;
+
+    public Rit(int id, String description){
         super(id);
+        unit = description;
+    }
+
+    public String getUnit(){
+        return unit;
     }
 }
